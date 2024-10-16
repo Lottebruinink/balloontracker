@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Autoplay YouTube Fullscreen Video</title>
+    <title>Balloon Tracker</title>
     <style>
         /* Style to make the video fullscreen */
         html, body {
@@ -27,12 +27,12 @@
     </style>
 </head>
 <body>
-    <iframe id="youtube-video" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&loop=1" allow="autoplay; fullscreen" allowfullscreen></iframe>
+    <iframe id="my-video" src="balloontracker_final.mp4" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
     <script>
         // Set the video to autoplay in fullscreen mode on page load
         window.onload = function () {
-            const iframe = document.getElementById('youtube-video');
+            const iframe = document.getElementById('my-video');
             const requestFullScreen = iframe.requestFullscreen || iframe.mozRequestFullScreen || iframe.webkitRequestFullscreen || iframe.msRequestFullscreen;
             if (requestFullScreen) {
                 requestFullScreen.call(iframe);
