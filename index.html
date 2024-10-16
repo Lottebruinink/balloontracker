@@ -16,26 +16,29 @@
             align-items: center;
         }
 
-        iframe {
+        video {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            border: 0;
+            object-fit: cover;
         }
     </style>
 </head>
 <body>
-    <iframe id="my-video" src="balloontracker_final.mp4" allow="autoplay; fullscreen" allowfullscreen></iframe>
+    <video id="my-video" autoplay muted loop playsinline>
+        <source src="balloontracker_final.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
 
     <script>
-        // Set the video to autoplay in fullscreen mode on page load
+        // Set the video to go fullscreen on page load
         window.onload = function () {
-            const iframe = document.getElementById('my-video');
-            const requestFullScreen = iframe.requestFullscreen || iframe.mozRequestFullScreen || iframe.webkitRequestFullscreen || iframe.msRequestFullscreen;
+            const video = document.getElementById('my-video');
+            const requestFullScreen = video.requestFullscreen || video.mozRequestFullScreen || video.webkitRequestFullscreen || video.msRequestFullscreen;
             if (requestFullScreen) {
-                requestFullScreen.call(iframe);
+                requestFullScreen.call(video);
             }
         };
     </script>
